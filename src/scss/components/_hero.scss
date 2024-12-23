@@ -1,0 +1,246 @@
+.hero {
+  padding: 551px 0 82px;
+  background-image: url(../img/hero-bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    color: var(--light-color);
+    font-family: var(--second-family);
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 2%;
+
+    margin: 0 0 41px;
+  }
+}
+
+
+.hero-search {
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 42px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    color: var(--light-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__btn {
+    border-radius: 4px;
+    background: var(--light-color);
+    color: rgb(26, 62, 62);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    align-self: flex-start;
+
+    padding: 16px 36px;
+  }
+
+  &__select {
+    box-sizing: border-box;
+    border: 1px solid rgb(225, 227, 228);
+    border-radius: 8px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 19px) center;
+    background-image: url(../img/arrow.svg);
+
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    min-width: 270px;
+    padding: 14px 44px 14px 16px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &__input {
+    padding: 14px 10px 14px 16px;
+    min-width: 270px;
+
+    box-sizing: border-box;
+    border: 1px solid var(--light-color);
+    background-color: transparent;
+    border-radius: 8px;
+
+    color: var(--light-color);
+    font-family: var(--first-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__option {
+    color: var(--pearl-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    min-width: 270px;
+  }
+
+  &__input::-webkit-calendar-picker-indicator {
+    background-image: url(../img/date-icon.svg);
+  }
+}
+
+.bg-rotated {
+  background-image: url(../img/arrow_rotated.svg);
+}
+
+.hero-search__select:focus option {
+  // box-shadow: 0 0 10px 100px green inset;
+  background-color: var(--light-color);
+  color: var(--pearl-color);
+}
+
+
+@include tablet {
+  .hero {
+    &__title {
+      font-size: 46px;
+    }
+
+    &-search {
+      padding: 36px;
+
+      &__list {
+        gap: 20px;
+      }
+
+      &__select {
+        min-width: 220px;
+      }
+
+      &__input {
+        min-width: 220px;
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .hero {
+    &__title {
+      font-size: 42px;
+    }
+
+    &-search {
+      padding: 32px 16px;
+
+      &__list {
+        gap: 14px;
+      }
+
+      &__select {
+        min-width: 160px;
+      }
+
+      &__input {
+        min-width: 160px;
+      }
+
+      &__btn {
+        padding: 18px 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .hero {
+    padding-top: 236px;
+
+    &__title {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 150%;
+      max-width: 345px;
+    }
+
+    &-search {
+      padding: 32px 16px;
+      gap: 14px;
+      backdrop-filter: none;
+
+      display: flex;
+      flex-direction: column;
+
+      &__list {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      &__select {
+        max-width: 130px;
+        font-size: 14px;
+      }
+
+      &__input {
+        max-width: 140px;
+        font-size: 14px;
+      }
+
+      &__btn {
+        padding: 14px 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+  }
+
+  .hero-search .hero-search__list .hero-search__item:first-child {
+    width: 100%;
+  }
+
+  .hero-search .hero-search__list .hero-search__item:first-child .hero-search__select {
+    max-width: none;
+  }
+
+  .hero-search .hero-search__list .hero-search__item .hero-search__text {
+    display: none;
+  }
+
+  .hero-search .hero-search__list .hero-search__item:nth-child(2) {
+    width: 100%;
+    order: 1;
+  }
+
+  .hero-search .hero-search__list .hero-search__item:nth-child(2) .hero-search__input {
+    max-width: none;
+  }
+
+  .hero-search .hero-search__list .hero-search__item:last-child {
+    width: 100%;
+  }
+
+  .hero-search .hero-search__list .hero-search__item:last-child .hero-search__select {
+    max-width: none;
+  }
+}

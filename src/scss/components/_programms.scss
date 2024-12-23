@@ -1,0 +1,165 @@
+.programms {
+  background: var(--haze-color);
+  padding: var(--padding-section);
+  &__container {
+    background-image: url(../img/programms-images.png);
+    background-repeat: no-repeat;
+
+    background-position: right center;
+  }
+
+  &__text {
+    color: var(--saffron-color);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__title {
+    color: var(--dark-color);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 120%;
+
+    margin: 8px 0 0 0;
+  }
+
+  &__descr {
+    color: var(--dark-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+
+    margin: 40px 0;
+    max-width: 580px;
+  }
+
+  &__btn {
+    border-radius: 4px;
+    background: var(--pearl-color);
+
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+
+    padding: 16px 38px;
+  }
+
+  &__image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.programms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-bottom: 40px;
+  &__title {
+    color: var(--dark-color);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+  }
+
+  &__descr {
+    color: var(--black-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    max-width: 514px;
+  }
+
+  &__title {
+    margin: 0 0 8px 0;
+  }
+
+  &__descr {
+    margin: 0;
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    padding-left: 66px;
+    background-image: url(../img/programms-exp.svg);
+
+    &--second {
+      background-image: url(../img/programms-private.svg);
+    }
+
+    &--three {
+      background-image: url(../img/programms-sale.svg);
+    }
+  }
+}
+
+@include tablet {
+  .programms {
+    &__container {
+      background-position: calc(100% - 3%) center;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__descr {
+      font-size: 16px;
+      margin: 25px 0;
+      max-width: 440px;
+    }
+
+    &-list {
+      &__title {
+        font-size: 16px;
+      }
+
+      &__descr {
+        max-width: 420px;
+      }
+    }
+
+    &__btn {
+      font-size: 14px;
+    }
+  }
+}
+
+@include small-tablet {
+  .programms {
+    &__container {
+      background-image: none;
+    }
+
+    &__descr {
+      max-width: none;
+    }
+
+    &-list__descr {
+      max-width: none;
+    }
+  }
+}
+
+@include mobile {
+  .programms {
+    &__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 120%;
+    }
+  }
+}
+

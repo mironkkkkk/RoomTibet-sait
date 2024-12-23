@@ -1,0 +1,165 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding-top: 16px;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__link {
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+  }
+
+  &__nav {
+    margin: 0 50px 0 auto;
+  }
+
+  &__btn {
+    border-radius: 4px;
+    background: var(--pearl-color);
+
+    color: var(--light-color);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+  }
+}
+
+@include tablet {
+  .header {
+    &__link {
+      font-size: 17px;
+    }
+
+    &__nav {
+      margin: 0 auto;
+    }
+  }
+}
+
+@include small-tablet {
+  .header {
+    &__link {
+      font-size: 15px;
+    }
+
+    &__list {
+      gap: 15px;
+    }
+
+    &__logo-image {
+      height: 45px;
+    }
+
+    &__btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+.header-mobile {
+  display: none;
+}
+
+@include mobile {
+  .header {
+    &-mobile {
+      display: block;
+    }
+
+    &__list {
+      flex-direction: column;
+
+      & .header__item:first-child {
+        display: none;
+      }
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__container {
+      justify-content: space-between;
+    }
+
+    &__nav {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      transition: left .5s ease-in-out;
+
+      left: -100%;
+      background-color: var(--pearl-color);
+
+      top: 0;
+
+      padding: 54px 0 18px 18px;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-weight: 400;
+
+      padding-left: 14px;
+    }
+
+    &__item {
+      background-image: url(../img/arrow-summary.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+  }
+}
+
+
+
+.burger {
+  @include burger;
+  color: var(--light-color);
+  --burger-height: 18px;
+  --burger-width: 21px;
+  --burger-line-height: 3px;
+  z-index: 1;
+
+  &::after {
+    width: 50%;
+    border-radius: 8px;
+
+    left: auto;
+    right: 0;
+  }
+
+  &::before {
+    border-radius: 8px;
+  }
+}
+
+.active-burger {
+  &::after {
+    width: 100%;
+  }
+}
+
+
+.menu--active {
+  left: 0;
+  z-index: 1;
+  transition: left .5s ease-in-out;
+
+  .burger::after {
+    width: 100%;
+  }
+}

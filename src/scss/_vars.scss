@@ -1,0 +1,20 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Nunito Sans", sans-serif;
+  --second-family: "ART", sans-serif;
+  --content-width: 1180px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --padding-section:80px 0 100px 0;
+
+  // colors
+  --light-color: #fdfdfd;
+  --pearl-color:#1a3e3e;
+  --dark-color:#18121e;
+  --saffron-color:#f2be22;
+  --black-color:#000000;
+  --haze-color: #f3f5f4;
+}
